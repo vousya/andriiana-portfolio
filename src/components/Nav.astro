@@ -1,0 +1,40 @@
+---
+const links = [
+  { href: '#about', label: 'Про мене' },
+  { href: '#experience', label: 'Досвід' },
+  { href: '#projects', label: 'Проєкти' },
+  { href: '#contact', label: 'Контакти' },
+];
+---
+
+<header class="fixed inset-x-0 top-0 z-50">
+  <nav
+    class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8"
+  >
+    <a href="#top" class="display text-xl tracking-tight text-paper sm:text-2xl">
+      АНДРІЯНА<span class="text-pink">.</span>
+    </a>
+
+    <ul class="hidden items-center gap-7 md:flex">
+      {
+        links.map((l) => (
+          <li>
+            <a
+              href={l.href}
+              class="text-sm font-medium text-white/70 transition-colors hover:text-pink"
+            >
+              {l.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <a
+      href="#contact"
+      class="pill bg-pink text-sm hover:bg-pink-deep transition-colors"
+    >
+      Зв'язатися
+    </a>
+  </nav>
+</header>

@@ -1,0 +1,55 @@
+---
+// Experience — "ДОСВІД · 4 РОКИ" + client logos
+const base = import.meta.env.BASE_URL;
+---
+
+<section
+  id="experience"
+  class="relative scroll-mt-20 overflow-hidden bg-pink px-5 py-24 text-ink sm:px-8 sm:py-32"
+>
+  <!-- faint concentric arcs like the original slide -->
+  <div
+    class="pointer-events-none absolute -top-1/3 right-0 aspect-square w-[80%] rounded-full border-[3rem] border-white/10"
+  >
+  </div>
+
+  <div class="relative mx-auto max-w-7xl">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="reveal display text-6xl sm:text-8xl lg:text-9xl">ДОСВІД</h2>
+      <p class="reveal display text-6xl text-white sm:text-8xl lg:text-9xl">
+        4 РОКИ
+      </p>
+    </div>
+
+    <div class="mt-12 grid max-w-3xl gap-6 text-lg leading-relaxed sm:text-xl">
+      <p class="reveal">
+        Працювати почала ще з 16 — тоді це був етап пошуку, проб і набуття
+        базового досвіду. Останні роки працюю вже <strong
+          class="underline decoration-lime decoration-4 underline-offset-4"
+          >більш системно та професійно</strong
+        >.
+      </p>
+      <p class="reveal" style="transition-delay:70ms">
+        Зараз можу впевнено сказати, що добре розумію свою сферу, знаю, як
+        досягати результату і створювати контент, який працює.
+      </p>
+    </div>
+
+    <!-- Client logos -->
+    <div class="reveal mt-14">
+      <p class="mb-4 text-sm font-semibold tracking-[0.2em] uppercase text-ink/60">
+        З ким працювала
+      </p>
+      <div class="rounded-[1.5rem] bg-white p-5 shadow-xl sm:p-7">
+        <img
+          src={base + 'img/clients.webp'}
+          alt="Логотипи брендів: Ваш Лаваш, vesna, get_get, Promteh Service, Grek Studio, GastroDigital"
+          width="1600"
+          height="83"
+          loading="lazy"
+          class="w-full"
+        />
+      </div>
+    </div>
+  </div>
+</section>

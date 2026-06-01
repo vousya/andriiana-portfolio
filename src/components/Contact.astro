@@ -1,0 +1,51 @@
+---
+// Contact — placeholders to fill in later.
+const contacts = [
+  { label: 'Instagram', value: '@your_handle', href: 'https://instagram.com/' },
+  { label: 'Telegram', value: '@your_handle', href: 'https://t.me/' },
+  { label: 'Email', value: 'you@example.com', href: 'mailto:you@example.com' },
+];
+---
+
+<section
+  id="contact"
+  class="relative scroll-mt-20 overflow-hidden px-5 py-28 sm:px-8 sm:py-36"
+>
+  <div
+    class="pointer-events-none absolute -bottom-32 left-1/2 h-[30rem] w-[30rem] -translate-x-1/2 rounded-full bg-pink/20 blur-[130px]"
+  >
+  </div>
+
+  <div class="relative mx-auto max-w-4xl text-center">
+    <p class="reveal mb-5 text-sm font-medium tracking-[0.25em] text-white/50 uppercase">
+      Працюємо разом?
+    </p>
+    <h2 class="reveal display text-5xl sm:text-7xl lg:text-8xl">
+      ДАВАЙТЕ<br /><span class="text-pink">СТВОРЮВАТИ</span> КОНТЕНТ
+    </h2>
+    <p class="reveal mx-auto mt-6 max-w-xl text-lg text-white/60">
+      Відкрита до нових проєктів та колаборацій. Напишіть — і обговоримо, як
+      зробити ваш бренд впізнаваним.
+    </p>
+
+    <div class="reveal mt-10 flex flex-wrap items-center justify-center gap-4">
+      {
+        contacts.map((c) => (
+          <a
+            href={c.href}
+            class="group flex items-center gap-3 rounded-full border border-white/15 px-6 py-3 transition-colors hover:border-pink hover:bg-pink hover:text-ink"
+          >
+            <span class="text-sm font-semibold tracking-wide uppercase opacity-60 group-hover:opacity-100">
+              {c.label}
+            </span>
+            <span class="font-medium">{c.value}</span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<footer class="border-t border-white/10 px-5 py-8 text-center text-sm text-white/40 sm:px-8">
+  © 2026 Андріяна · SMM-спеціаліст · Портфоліо
+</footer>

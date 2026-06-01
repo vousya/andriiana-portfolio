@@ -1,0 +1,55 @@
+---
+// About — "Давайте знайомитись"
+const paragraphs = [
+  'Мене звати Андріяна. Навчаюсь на маркетингу, 3 курс, заочна форма.',
+  'Я творча людина: обожнюю музику, люблю співати та грати на піаніно. Окреме місце в моєму житті займає дизайн. Свою роботу я справді люблю і горю нею.',
+  'У повсякденному житті я за баланс: люблю активність (особливо кататись на велосипеді), але також знаходжу час побути наодинці з собою і почитати книгу.',
+  'Я трохи інтроверт, але якщо мені комфортно з людьми — легко відкриваюсь, стаю дуже живою та балакучою.',
+];
+const base = import.meta.env.BASE_URL;
+---
+
+<section id="about" class="relative scroll-mt-20 px-5 py-24 sm:px-8 sm:py-32">
+  <div class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+    <!-- Portrait -->
+    <div class="reveal relative mx-auto w-full max-w-sm">
+      <div
+        class="absolute -inset-3 -rotate-2 rounded-[2rem] bg-pink/30 blur-xl"
+      >
+      </div>
+      <div
+        class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-ink-soft"
+      >
+        <img
+          src={base + 'img/portrait.webp'}
+          alt="Андріяна, SMM-спеціаліст"
+          width="720"
+          height="1477"
+          loading="lazy"
+          class="h-full w-full object-cover"
+        />
+      </div>
+      <span
+        class="pill absolute top-5 -right-3 rotate-3 bg-lime text-lg shadow-lg sm:-right-5"
+      >
+        Андріяна
+      </span>
+    </div>
+
+    <!-- Text -->
+    <div>
+      <h2 class="reveal display mb-8 text-5xl sm:text-6xl">
+        Давайте<br />знайомитись
+      </h2>
+      <div class="space-y-5 text-lg leading-relaxed text-white/75">
+        {
+          paragraphs.map((p, i) => (
+            <p class="reveal" style={`transition-delay:${i * 70}ms`}>
+              {p}
+            </p>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
