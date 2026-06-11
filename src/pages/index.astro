@@ -18,12 +18,12 @@ import { projects } from '../data/projects.js';
 
     <section id="projects" class="scroll-mt-20">
       <div class="mx-auto max-w-7xl px-5 pt-24 sm:px-8 sm:pt-32">
-        <p class="reveal mb-3 text-sm font-medium tracking-[0.25em] text-white/50 uppercase">
+        <p
+          class="reveal mb-3 text-sm font-medium tracking-[0.25em] text-white/50 uppercase"
+        >
           Кейси
         </p>
-        <h2 class="reveal display text-5xl sm:text-7xl lg:text-8xl">
-          ПРОЄКТИ
-        </h2>
+        <h2 class="reveal display text-5xl sm:text-7xl lg:text-8xl">ПРОЄКТИ</h2>
       </div>
       {projects.map((project) => <Project project={project} />)}
     </section>

@@ -17,7 +17,11 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href={`${import.meta.env.BASE_URL}favicon.svg`}
+    />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Inter (Latin + Cyrillic) -->
@@ -37,26 +41,9 @@ const {
   <body class="bg-ink text-paper">
     <slot />
 
-    <!-- Scroll-reveal: progressively enhances; content is fully visible without JS -->
-    <script>
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const els = document.querySelectorAll('.reveal');
-      if (reduce || !('IntersectionObserver' in window)) {
-        els.forEach((el) => el.classList.add('is-visible'));
-      } else {
-        const io = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                io.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
-        );
-        els.forEach((el) => io.observe(el));
-      }
-    </script>
+    <!-- Scroll-reveal: external same-origin script so a strict CSP (script-src
+         'self') allows it without 'unsafe-inline'. is:inline keeps Astro from
+         re-bundling it back into the HTML. -->
+    <script is:inline src={`${import.meta.env.BASE_URL}reveal.js`}></script>
   </body>
 </html>
