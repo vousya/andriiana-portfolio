@@ -34,7 +34,7 @@ kubectl apply -k "$(dirname "$0")/../k8s"
 kubectl -n portfolio rollout status deployment/portfolio --timeout=180s
 
 echo "==> Waiting for ingress public IP..."
-for i in $(seq 1 30); do
+for _ in $(seq 1 30); do
   IP=$(kubectl -n portfolio get ingress portfolio \
         -o jsonpath='{.status.loadBalancer.ingress[0].ip}' 2>/dev/null || true)
   [ -n "$IP" ] && break

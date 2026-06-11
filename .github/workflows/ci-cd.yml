@@ -77,7 +77,7 @@ jobs:
       - name: Run container
         run: |
           docker run -d --name portfolio -p 8080:8080 portfolio:test
-          for i in $(seq 1 30); do
+          for _ in $(seq 1 30); do
             if curl -fsS http://127.0.0.1:8080/healthz; then echo "up"; break; fi
             sleep 1
           done
