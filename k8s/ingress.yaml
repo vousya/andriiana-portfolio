@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: portfolio
+  namespace: portfolio
+  labels:
+    app.kubernetes.io/name: andriiana-portfolio
+spec:
+  # AKS managed NGINX (app routing add-on):
+  #   az aks approuting enable -g <rg> -n <cluster>
+  ingressClassName: webapprouting.kubernetes.io
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: portfolio
+                port:
+                  number: 80

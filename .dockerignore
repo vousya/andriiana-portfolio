@@ -1,0 +1,21 @@
+# Keep the build context tiny and reproducible.
+node_modules
+dist
+.git
+.github
+.gitignore
+k8s
+tests
+test-results
+playwright-report
+*.md
+.dockerignore
+Dockerfile
+.prettierrc*
+.prettierignore
+.vscode
+.idea
+npm-debug.log*
+.DS_Store
+.env
+.env.*
