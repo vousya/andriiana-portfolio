@@ -8,7 +8,7 @@ metadata:
 spec:
   # AKS managed NGINX (app routing add-on):
   #   az aks approuting enable -g <rg> -n <cluster>
-  ingressClassName: webapprouting.kubernetes.io
+  ingressClassName: webapprouting.kubernetes.azure.com
   rules:
     - http:
         paths:
